@@ -11,7 +11,6 @@ from google.adk.tools.mcp_tool.mcp_session_manager import StreamableHTTPConnecti
 # Configuration from environment variables
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://ollama:11434/v1")
 MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "http://mcp-server:8000")
-MCP_ACCESS_KEY = os.getenv("MCP_ACCESS_KEY", "your-secret-key-here")
 
 # Direct HTTP connection to FastMCP (no bridge)
 # FastMCP exposes MCP endpoint at /mcp with streamable-http transport

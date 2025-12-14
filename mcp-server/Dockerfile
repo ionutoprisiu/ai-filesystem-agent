@@ -14,8 +14,5 @@ COPY server.py .
 
 EXPOSE 8000
 
-# Environment variable for access key (can be overridden in docker-compose)
-ENV MCP_ACCESS_KEY=your-secret-key-here
-
 CMD ["python", "server.py"]
 

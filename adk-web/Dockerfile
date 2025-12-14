@@ -14,7 +14,6 @@ EXPOSE 8080
 # Environment variables
 ENV OLLAMA_URL=http://ollama:11434/v1
 ENV MCP_SERVER_URL=http://mcp-server:8000
-ENV MCP_ACCESS_KEY=your-secret-key-here
 
 CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8080"]
 

@@ -26,12 +26,7 @@ git clone <repository-url>
 cd ai-filesystem-agent
 ```
 
-2. (Optional) Set the access key if you want:
-```bash
-export MCP_ACCESS_KEY=your-secret-key-here
-```
-
-3. Start everything:
+2. Start everything:
 ```bash
 docker-compose up --build
 ```
@@ -90,7 +85,6 @@ I added some basic security:
 ## Configuration
 
 You can set environment variables if needed:
-- `MCP_ACCESS_KEY` - access key (default: `your-secret-key-here`)
 - `OLLAMA_URL` - where Ollama is running (default: `http://ollama:11434/v1`)
 - `MCP_SERVER_URL` - where MCP server is (default: `http://mcp-server:8000`)
 
