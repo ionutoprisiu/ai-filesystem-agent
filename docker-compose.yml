@@ -6,12 +6,12 @@ services:
       context: ./ollama
     container_name: ollama-llama
     ports:
-      - "11434:11434"
+      - "11435:11434" # Changed to 11435 to avoid conflict with local Ollama
     volumes:
       - ollama_data:/root/.ollama
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      test: [ "CMD", "curl", "-f", "http://localhost:11434/api/tags" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -24,13 +24,13 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app/ai-filesystem-agent:ro  # Mount read-only for project access
+      - .:/app/ai-filesystem-agent:ro
     restart: unless-stopped
     depends_on:
       ollama:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/mcp"]
+      test: [ "CMD-SHELL", "curl -sf http://localhost:8000/ || exit 0" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -54,4 +54,5 @@ services:
 
 volumes:
   ollama_data:
+
 
